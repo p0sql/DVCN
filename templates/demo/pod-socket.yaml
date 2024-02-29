@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: socket-demo
+spec:
+  #serviceAccountName: default
+  containers:
+  - name: socket-demo
+    image: nginx
+    volumeMounts:
+    - mountPath: /var/run
+      name: noderoot
+    command: ["sleep", "infinity"]
+  volumes:
+  - name: noderoot
+    hostPath:
+      path: /var/run

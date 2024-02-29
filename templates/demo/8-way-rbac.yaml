@@ -1,0 +1,14 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: pod-cluster-8ways
+subjects:
+  - kind: ServiceAccount
+    # Reference to upper's `metadata.name`
+    name: lucifer
+    # Reference to upper's `metadata.namespace`
+    namespace: default
+roleRef:
+  kind: ClusterRole
+  name: 8-way-create
+  apiGroup: rbac.authorization.k8s.io

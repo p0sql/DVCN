@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: seccomp-ctx-demo
+spec:
+  containers:
+  - name: seccomp-ctx-demo
+    image: nginx
+    securityContext:
+      seccompProfile:
+        type: RuntimeDefault
+    command: [ "sleep", "infinity" ]

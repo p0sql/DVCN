@@ -1,0 +1,35 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: thor
+  annotations:
+    kubernetes.io/service-account.name: thor
+type: kubernetes.io/service-account-token
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: god
+  annotations:
+    kubernetes.io/service-account.name: god
+type: kubernetes.io/service-account-token
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: lucifer
+  annotations:
+    kubernetes.io/service-account.name: lucifer
+type: kubernetes.io/service-account-token
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: odin
+  annotations:
+    kubernetes.io/service-account.name: odin
+type: kubernetes.io/service-account-token

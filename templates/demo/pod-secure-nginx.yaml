@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-secure-nginx
+spec:
+  containers:
+  - name: pod-secure-nginx
+    image: bitnami/nginx:latest
+    securityContext:
+      allowPrivilegeEscalation: false
+      seccompProfile:
+        type: RuntimeDefault
+      runAsNonRoot: true
+      capabilities:
+        drop: ["ALL"]
+    command: ["sleep", "infinity"]

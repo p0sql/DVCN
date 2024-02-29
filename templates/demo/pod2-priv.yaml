@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-role-grantor
+spec:
+  serviceAccountName: odin
+  containers:
+  - name: pod-role-grantor
+    image: nginx
+    command: ["sleep", "infinity"]
